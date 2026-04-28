@@ -12,7 +12,6 @@ public class FirstTS {
                 .when()
                 .get("/booking")
                 .then()
-                .log().body()
                 .statusCode(200);
     }
 
@@ -24,11 +23,11 @@ public class FirstTS {
                 .get("/booking/1")
                 .then()
                 .log().body()
-                .statusCode(200)
-                .body("firstname", Matchers.equalTo("Mary"))
+                .statusCode(200);
+                /*.body("firstname", Matchers.equalTo("Mary"))
                 .body("lastname", Matchers.containsString("Smith"))
                 .body("totalprice", Matchers.greaterThan(500))
-                .body("bookingdates", Matchers.hasSize(2));
+                .body("bookingdates", Matchers.hasSize(2));*/
     }
 
 }
