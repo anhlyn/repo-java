@@ -1,0 +1,29 @@
+name: repo-java CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+
+      - name: set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: maven
+      - name: Run automation test
+        run: mvn test
+      - name: Upload surefire report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: repo-java-surefire-report
+          path: target/surefire-reports
