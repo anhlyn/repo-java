@@ -20,7 +20,7 @@ public class FirstTS {
         given()
                 .baseUri(URL)
                 .when()
-                .get("/booking/1")
+                .get("/booking/2")
                 .then()
                 .log().body()
                 .statusCode(200);
