@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Repo Java FirstTS" parallel="classes" thread-count="2">
-    <test name="First TS">
+<suite name="Repo Java TS" parallel="classes" thread-count="2">
+    <test name="All TS">
         <classes>
             <class name="FirstTS"></class>
             <class name="SecondTS"></class>

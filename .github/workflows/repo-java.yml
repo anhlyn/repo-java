@@ -26,3 +26,9 @@ jobs:
         with:
           name: repo-java-surefire-report
           path: target/surefire-reports
+      - name: Upload allure report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: repo-java-allure-report
+          path: allure-results
